@@ -18,7 +18,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2825&q=80);">
   <div class="container">
     <h1>Save movie</h1>
-    <%= link_to "Create a list", new_list_path, class: "btn btn-ghost" %>
+    <%= link_to "Create a list", new_list_path, class: "new_list" %>
   </div>
 </div>
 
@@ -26,13 +26,11 @@
   <h1>My lists</h1>
     <div class="row">
       <% @lists.each do |list| %>
-        <a class="text-decoration-none">
           <div class="card-category">
-          <ul>
-          <li><%= link_to list.name, list_path(list) %></li>
+          <ul class="list-group text-decoration-none">
+          <li class="list-group-item"><%= link_to list.name, list_path(list), class: "text-decoration-none" %></li>
           </ul>
           </div>
-        </a>
       <% end %>
     </div>
 </div>
